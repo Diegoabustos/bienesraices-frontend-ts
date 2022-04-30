@@ -1,4 +1,6 @@
+import React from 'react'
 import Helmet from 'react-helmet';
+import { Global, css } from '@emotion/react'
 
 export interface LayoutProps {
   children: React.ReactNode
@@ -7,6 +9,16 @@ export interface LayoutProps {
 export const Layout: React.FC<LayoutProps> = (props: LayoutProps) => {
   return (
     <>
+    <Global 
+      styles={
+        css`
+          body {
+            background-color: red;
+          }
+        `
+      }
+    />
+
     <Helmet>
         <title>Bienes Raices Gatsby TS</title>
         <meta name='description' content='Sitio web de bienes raices en Gatsby' />
