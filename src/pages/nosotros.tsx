@@ -1,7 +1,7 @@
 import React from "react";
 import { Layout } from "../components/layout";
 
-const Nosotros = () => {
+export const Nosotros = () => {
     return (
         <Layout>
             <h1>Nosotros</h1>

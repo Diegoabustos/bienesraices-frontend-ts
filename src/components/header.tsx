@@ -1,21 +1,33 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import { Navegacion } from './navegacion';
-
-export interface GatsbyLinkProps {
-
-}
+import React, { DetailedHTMLProps, HTMLAttributes } from "react"
+import { Link } from "gatsby"
+import { Navegacion } from "./navegacion"
+import { css, jsx } from "@emotion/react"
 
 export const Header = () => {
-    return (
-        <header>
-            <div>
-                <Link to='/'>
-                    Bienes Raices
-                </Link>
+  return (
+    <header
+      css={css`
+        background-color: #0d283b;
+        padding: 1rem;
+      `}
+    >
+      <div
+        css={css`
+          max-width: 120rem;
+          margin: 0 auto;
+          text-align: center;
 
-                <Navegacion />
-            </div>
-        </header>
-    )
+          @media (min-width: 768px) {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          }
+        `}
+      >
+        <Link to="/">Bienes Raices</Link>
+
+        <Navegacion />
+      </div>
+    </header>
+  )
 }

@@ -2,9 +2,11 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "esnext",
-    "jsx": "preserve",
     "lib": ["dom", "esnext"],
     "strict": true,
+    "types": ["on/react/types/css-prop"],
+    "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react",
     "noEmit": true,
     "isolatedModules": true,
     "esModuleInterop": true,
