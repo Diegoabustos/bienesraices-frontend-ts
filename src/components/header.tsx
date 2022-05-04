@@ -1,9 +1,19 @@
 import React, { DetailedHTMLProps, HTMLAttributes } from "react"
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import { Navegacion } from "./navegacion"
 import { css, jsx } from "@emotion/react"
 
 export const Header = () => {
+  
+  // consultar logo.svg
+  const {logo} = useStaticQuery(graphql`
+    query {
+      logo: file(relativePath: { eq: "logo.svg" }) {
+        publicURL
+      }
+    }
+  `)
+
   return (
     <header
       css={css`
@@ -24,7 +34,12 @@ export const Header = () => {
           }
         `}
       >
-        <Link to="/">Bienes Raices</Link>
+        <Link to="/">
+          <img 
+            src={logo.publicURL}
+            alt="Logotipo Bienes Raices"
+          />
+        </Link>
 
         <Navegacion />
       </div>
